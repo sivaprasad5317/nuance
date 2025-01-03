@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Currys Brand Migration</title>
+    <style>
+        @font-face {
+            font-family: CurrysSans;
+            src: url('https://asosd365.z33.web.core.windows.net/CurrysSans-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: CurrysSans,CurrysSans-Regular, sans-serif;
+        }
+
+        .oc-lcw-container {
+            height: 460px;
+            width: 390px;
+        }
+        #oc-lcw{
+            -webkit-box-shadow: 2px 3px 19px -2px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 2px 3px 19px -2px rgba(0, 0, 0, 1);
+            box-shadow: 2px 3px 19px -2px rgba(0, 0, 0, 1);
+            border-radius: .5em;
+        }
+        .DX-DT-aval {
+            width: 148px;
+            font-size: 18px;
+            background: #632a7e center no-repeat;
+            border-radius: 15px;
+            background-position: -2px -2px;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: bold;
+            margin: auto 0;
+            height: 64px;
+            outline: 0;
+            padding-right: 6px;
+            text-align: right;
+            white-space: nowrap;
+            border: 2px solid transparent;
+            margin-left: -2px;
+            box-sizing: border-box;
+            right: 15px;
+            position: fixed;
+            bottom: 15px;
+            z-index: 9999999;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .DX-DT-aval::before{    
+            background: url("assets/sprite.svg") no-repeat -40px -143px;
+            content: "";
+            background-size: auto;
+            background-repeat: no-repeat;
+            display: block;
+            height: 40px;
+            left: 10px;
+            top: 10px;
+            position: absolute;
+            width: 40px;
+            box-sizing: border-box;
+        }
+        .DX-DT-aval::after {
+            content: "Chat Now";
+        }
+           
+        .DX-DT-resume {
+            bottom: 0px;
+            right: 0px;
+            z-index: 999999999999;
+            position: fixed;
+            height: 45px;
+            width: 375px;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="e2save-c2c"></div>
+    <div id="currys-chat-widget"></div>
+    <script src="c2c-btn.js"></script>
+    <!-- <script id="Microsoft_Omnichannel_LCWidget"
+            src="https://oc-cdn-public-eur.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js"
+            data-app-id="4ca0f3ea-494d-49ba-bbbb-e900d1404f15"
+            data-lcw-version="prod"
+            data-org-id="d3bd5739-a99d-ef11-8a66-6045bd8c836c"
+            data-org-url="https://m-d3bd5739-a99d-ef11-8a66-6045bd8c836c.eu.omnichannelengagementhub.com"
+            data-customization-callback="lcw"
+            data-font-family-override="Segoe UI Emoji"></script>
+    <script> -->
+
+
+        <script id="Microsoft_Omnichannel_LCWidget" 
+            src="https://oc-cdn-public-gbr.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js" data-app-id="553da572-e3b1-441d-81ea-d8793224b666"
+            data-lcw-version="prod"
+            data-org-id="7a779eea-9a8f-ef11-8a64-6045bdd11eab"
+            data-org-url="https://m-7a779eea-9a8f-ef11-8a64-6045bdd11eab.uk.omnichannelengagementhub.com"
+            data-customization-callback="lcw"
+            data-font-family-override="Segoe UI Emoji"></script>
+        <script>
+        function lcw() {
+            const onPrintPageClick = () => {
+                console.log("Print initiated");
+                window.print();
+            };
+            const adaptiveCardHostConfig = {
+                fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif",
+                spacing: {
+                    padding: "16px"
+                },
+                containerStyles: {
+                    default: {
+                        backgroundColor: "#FFFFFF",
+                        foregroundColors: {
+                            default: {
+                                default: "#213038",
+                                subtle: "#6E6E6E"
+                            }
+                        }
+                    }
+                },
+                actions: {
+                    actionsOrientation: "Vertical",
+                    actionAlignment: "stretch",
+                    buttonSpacing: 8,
+                    maxActions: 1,
+                    spacing: "Default"
+                },
+                inputs: {
+                    spacing: "Large"
+                }
+            };
+
+            
+            return {
+                styleProps: {
+                    generalStyles: {
+                        height: "578px",
+                        width: "361px"
+                    },
+                    className: "embedded-chat",
+                },
+                chatButtonProps: {
+                    controlProps: {
+                        hideChatButton: true
+                    }
+                },
+                headerProps: {
+                    styleProps: {
+                        generalStyleProps: {
+                            backgroundColor: "rgb(255, 255, 255)",
+                            height: "47px",
+                            fontSize: "16px",
+                            paddingLeft: "15px",
+                            borderBottom: "1px solid #cccccc"
+                        },
+                        titleStyleProps: {
+                            fontSize: 20,
+                            fontFamily: "CurrysSans",
+                            fontWeight: "400",
+                            color: "rgb(33, 48, 56)",
+                            lineHeight: 24,
+                            top: 12,
+                            position: "absolute"
+                        },
+                        closeButtonStyleProps: {
+                            backgroundImage: "url('https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/sprite.svg')",
+                            backgroundSize: "auto",
+                            backgroundPosition: "-309px -60px",
+                            backgroundRepeat: "no-repeat",
+                            transform: "scale(1.1)",
+                            margin: "5px",
+                            width: "32px",
+                            height: "32px",
+                            color: "rgba(255, 255, 255, 0)",
+                            top: 8,
+                            position: "absolute",
+                            left: 0
+                        },
+                        minimizeButtonStyleProps: {
+                            backgroundImage: "url('https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/sprite.svg')",
+                            backgroundSize: "auto",
+                            backgroundPosition: "-216px -60px",
+                            backgroundRepeat: "no-repeat",
+                            transform: "scale(1.1)",
+                            margin: "5px",
+                            width: "24px",
+                            height: "24px",
+                            color: "rgba(255, 255, 255, 0)",
+                            position: "absolute",
+                            right: 5,
+                            top: 8
+                        },
+                        closeButtonHoverStyleProps: {
+                            margin: "5px",
+                            backgroundColor: "rgba(255, 255, 255, 0.1)",
+                            color: "rgba(255, 255, 255, 0.1)",
+                            filter: "none"
+                        },
+                        minimizeButtonHoverStyleProps: {
+                            margin: "5px",
+                            backgroundColor: "rgba(255, 255, 255, 0.1)",
+                            color: "rgba(255, 255, 255, 0.1)",
+                            filter: "none"
+                        }
+                    },
+                    controlProps: {
+                        hideIcon: true,
+                        hideTitle: true,
+                        hideMinimizeButton: false,
+                        leftGroup: {
+                            children: [
+                                '{"$$typeof": "$$Symbol:react.element","type": "img","key": null,"ref": null,"props": {"src": "https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/e2save-logo.svg","width": 133,"height": 30,"alt": "e2save logo"},"_owner": null,"_store": {}}'
+                            ]
+                        },
+                    },
+                },
+                loadingPaneProps: {
+                    controlProps: {
+                        hideLoadingPane: true
+                    }
+                },
+                footerProps: {
+                    controlProps: {
+                        hideEmailTranscriptButton: false,
+                        hideDownloadTranscriptButton: false,
+                        hideAudioNotificationButton: false,
+                        onDownloadTranscriptClick: onPrintPageClick,
+                        downloadTranscriptButtonProps:{
+                            iconName: "Print"
+                        },
+                        audioNotificationButtonProps:{
+                            id: "AudioNotificationButtonId",
+                            type: "Icon",
+                            ariaLabel: "TurnSoundOff",
+                            toggleAriaLabel: "TurnSoundOn",
+                            iconName: "Volume3",
+                            toggleIconName: "Volume0",
+                        }
+                    },
+                    styleProps: {
+                        generalStyleProps: {
+                            height: "40px",
+                            borderTop: "1px solid rgb(230, 230, 230)"
+                        },
+                        downloadTranscriptButtonStyleProps:{
+                            icon: {
+                                color: "rgb(0 0 0 / 0%)",
+                                fontSize: 0,
+                            },
+                            backgroundImage: "url('https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/sprite.svg')",
+                            backgroundSize: "auto",
+                            backgroundPosition: "-72px -60px",
+                            backgroundRepeat: "no-repeat",
+                            border: "2px solid transparent",
+                            margin: "5px",
+                            width: "24px",
+                            height: "24px",
+                            color: "rgba(255, 255, 255, 0)",
+                            position: "absolute",
+                            left: 2
+                        },
+                        emailTranscriptButtonStyleProps:{
+                            icon: {
+                                color: "rgb(0 0 0 / 0%)",
+                                fontSize: 0,
+                            },
+                            backgroundImage: "url('https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/sprite.svg')",
+                            backgroundSize: "auto",
+                            backgroundPosition: "-24px -60px",
+                            backgroundRepeat: "no-repeat",
+                            margin: "5px",
+                            width: "24px",
+                            height: "24px",
+                            border: "2px solid transparent",
+                            color: "rgba(255, 255, 255, 0)",
+                            position: "absolute",
+                            left: 40
+                        },
+                        audioNotificationButtonStyleProps:{
+                            icon: {
+                                color: "rgb(0 0 0 / 0%)",
+                                fontSize: 0,
+                            },
+                            backgroundImage: "url('https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/sprite.svg')",
+                            backgroundSize: "auto",
+                            backgroundPosition: "-120px -60px",
+                            backgroundRepeat: "no-repeat",
+                            margin: "5px",
+                            border: "2px solid transparent",
+                            width: "24px",
+                            height: "24px",
+                            color: "rgba(255, 255, 255, 0)",
+                            position: "absolute",
+                            left: 75
+                        }
+                    }
+                },
+                emailTranscriptPane: {
+                    controlProps: {
+                        titleText: "Before you go.",
+                        subtitleText: "Enter your email address and we'll send you a transcript of your chat.",
+                        isButtonGroupHorizontal: false,
+                        cancelButtonText: "Back to chat",
+                        sendButtonText: "Send",
+                        inputPlaceholder: "email@email.com",
+                        hideTitle: false,
+                        hideSubtitle: false,
+                        hideInput: false,
+                        hideSendButton: false,
+                        hideCancelButton: false
+                    },
+                    styleProps: {
+                        generalStyleProps: {
+                            padding: "32px 24px",
+                            backgroundColor: "#ffffff",
+                            width: "100%",
+                            height: "100%",
+                            boxSizing: "border-box",
+                            display: "flex",
+                            flexDirection: "column"
+                        },
+                        headerGroupStyleProps: {
+                            marginBottom: "32px"
+                        },
+                        titleStyleProps: {
+                            fontSize: "14px",
+                            fontWeight: "600",
+                            color: "rgb(33, 48, 56)",
+                            marginBottom: "8px",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif"
+                        },
+                        subtitleStyleProps: {
+                            fontSize: "14px",
+                            fontWeight: "400",
+                            color: "rgb(33, 48, 56)",
+                            lineHeight: "20px",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif"
+                        },
+                        inputStyleProps: {
+                            width: "100%",
+                            height: "100%",
+                            fontSize: "14px",
+                            marginBottom: "32px",
+                            boxSizing: "border-box",
+                            borderColor: "rgb(76, 18, 161) !important",
+                            border: "1px solid !important",
+                            borderRadius: "4px !important",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif",
+                            outline: "none",
+                            position: "relative",
+                            appearance: "none"
+                        },
+                        buttonGroupStyleProps: {
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            gap: "16px",
+                            marginTop: "auto"
+                        },
+                        sendButtonStyleProps: {
+                            backgroundColor: "rgb(76, 18, 161)",
+                            color: "#ffffff",
+                            border: "none",
+                            borderRadius: "24px",
+                            padding: "12px 48px",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            cursor: "pointer",
+                            width: "auto",
+                            minWidth: "120px",
+                            height: "48px",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif",
+                            marginBottom: "8px"
+                        },
+                        sendButtonHoveredStyleProps: {
+                            backgroundColor: "rgb(62, 15, 132)"
+                        },
+                        cancelButtonStyleProps: {
+                            backgroundColor: "transparent",
+                            color: "rgb(76, 18, 161)",
+                            border: "none",
+                            padding: "8px",
+                            fontSize: "14px",
+                            fontWeight: "400",
+                            cursor: "pointer",
+                            textDecoration: "underline",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif",
+                            width: "auto"
+                        },
+                        cancelButtonHoveredStyleProps: {
+                            backgroundColor: "transparent",
+                            color: "rgb(62, 15, 132)",
+                            textDecoration: "underline"
+                        }
+                    }
+                },
+                webChatContainerProps: {
+                    webChatStyles: {
+                        backgroundColor: "rgb(255 255 255)",
+                        boxShadow: "2px 3px 19px -2px rgba(0, 0, 0, 1)",
+                        borderRadius:".5em",
+                        bubbleBackground: "rgb(239 239 241)",
+                        bubbleBorderColor: "transparent",
+                        bubbleBorderRadius: "8px !important",
+                        bubbleBorderStyle: "none",
+                        bubbleBorderWidth: 0,
+                        bubbleFromUserBackground: "rgb(99 42 126)",
+                        bubbleFromUserBorderColor: "transparent",
+                        bubbleFromUserBorderStyle: "none",
+                        bubbleFromUserBorderWidth: 0,
+                        bubbleFromUserNubOffset: 0,
+                        bubbleFromUserNubSize: 0,
+                        bubbleNubOffset: 0,
+                        bubbleNubSize: 0,
+                        bubbleTextColor: "rgb(0 0 0)",
+                        bubbleFromUserTextColor: "rgb(255 255 255)",
+                        bubbleFromUserBorderRadius: "8px !important",
+                        sendBoxBackground: "rgb(255, 255, 255)",
+                        sendBoxButtonColor: "rgb(86 112 122)",
+                        sendBoxHeight: 56,
+                        sendBoxMaxHeight: 120,
+                        sendBoxTextColor: "rgb(45, 45, 45)",
+                        sendBoxBorderRadius: 20,
+                        sendBoxPlaceholderColor: "rgb(150, 150, 150)",
+                        sendBoxPlaceholder: "Send a message",
+                        subtle: "lime !important",
+                        suggestedActionBackground: "rgb(255, 255, 255)",
+                        suggestedActionBorderColor: "rgb(76, 18, 161)",
+                        suggestedActionBorderRadius: 8,
+                        suggestedActionTextColor: "rgb(76, 18, 161)",
+                        timestampColor: "rgb(86, 112, 122)",
+                        transcriptOverlayButtonBackground: "rgba(0, 0, 0, .6)",
+                        transcriptOverlayButtonBackgroundOnFocus: "rgba(0, 0, 0, .8)",
+                        transcriptOverlayButtonBackgroundOnHover: "rgba(0, 0, 0, .8)",
+                        transcriptOverlayButtonColor: "rgb(255, 255, 255)",
+                        transcriptOverlayButtonColorOnFocus: "rgb(255, 255, 255)",
+                        transcriptOverlayButtonColorOnHover: "rgb(255, 255, 255)",
+                        typingAnimationBackgroundImage: "linear-gradient(rgb(238, 238, 238), rgb(238, 238, 238))",
+                        typingAnimationDuration: 1500,
+                        typingAnimationHeight: 20,
+                        typingAnimationWidth: 64,
+                        hideUploadButton: true,
+                        avatarSize: 32
+                        //sendBoxImage: "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/btn-send-2x-xRVZXxsIA5DiiYUo2zT1sFjrZkrXst.png')",
+                        //sendBoxButtonWidth: "35px",
+                        //sendBoxButtonHeight: "30px"
+                    },
+                    renderingMiddlewareProps: {
+                        avatarStyleProps: {
+                            backgroundImage: "url('https://brave-cliff-059d93a1e.5.azurestaticapps.net/assets/sprite.svg')",
+                            backgroundColor: "rgb(255, 255, 255)",
+                            backgroundSize: "auto",
+                            backgroundColor: "transparent",
+                            backgroundPosition: "0px -112px",
+                            backgroundRepeat: "no-repeat"
+                        },
+                        avatarTextStyleProps: {
+                            display: "none"
+                        },
+                        userMessageBoxStyles: {
+                            position: "relative",
+                            marginLeft: "auto",
+                            marginRight: "6px",
+                            alignSelf: "flex-end"
+                        },
+                        systemMessageBoxStyles: {
+                            position: "relative",
+                            marginRight: "auto",
+                            marginLeft: "6px",
+                            alignSelf: "flex-start"
+                        },
+                        userMessageStyleProps: {
+                            position: "relative"
+                        },
+                        systemMessageStyleProps: {
+                            padding: "10pt",
+                            position: "relative"
+                        },
+                        timestampContentStyleProps: {
+                            fontSize: "10px",
+                            color: "rgb(33, 48, 56)",
+                            fontFamily: "\"CurrysSans\", Segoe UI, sans-serif",
+                        }
+                    }
+                },
+                confirmationPaneProps: {
+                    controlProps: {
+                        hideConfirmationPane: false,
+                        titleText: "End Chat?",
+                        subtitleText: "You are about to end your current chat session. This will exit the chat conversation immediately.",
+                        confirmButtonText: "END CHAT",
+                        cancelButtonText: "BACK TO CHAT"
+                    },
+                    styleProps: {
+                        generalStyleProps: {
+                            width: "343px",
+                            borderRadius: "8px",
+                            color: "rgb(33, 48, 56)",
+                            backgroundColor: "rgb(255, 255, 255)",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            padding: "32px 24px",
+                            transform: "translate(-50%, -50%)",
+                            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif"
+                        },
+                        buttonGroupStyleProps: {
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "16px",
+                            marginTop: "32px"
+                        },
+                        titleStyleProps: {
+                            fontSize: "14px",
+                            fontWeight: "600",
+                            textAlign: "left",
+                            color: "rgb(33, 48, 56)",
+                            marginBottom: "8px",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif"
+                        },
+                        subtitleStyleProps: {
+                            fontSize: "14px",
+                            fontWeight: "400",
+                            textAlign: "left",
+                            color: "rgb(33, 48, 56)",
+                            lineHeight: "20px",
+                            margin: "0px !important",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif"
+                        },
+                        confirmButtonStyleProps: {
+                            backgroundColor: "rgb(76, 18, 161)",
+                            color: "rgb(255, 255, 255)",
+                            border: "none",
+                            borderRadius: "24px",
+                            width: "130px",
+                            height: "48px",
+                            fontSize: "14px",
+                            fontWeight: "400 !important",
+                            cursor: "pointer",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif"
+                        },
+                        cancelButtonStyleProps: {
+                            backgroundColor: "transparent",
+                            color: "rgb(76, 18, 161)",
+                            border: "none",
+                            padding: "8px",
+                            fontSize: "12px",
+                            fontWeight: "400",
+                            cursor: "pointer",
+                            textDecoration: "underline",
+                            fontFamily: "CurrysSans, CurrysSans-Regular, sans-serif",
+                            width: "auto",
+                            margin: "0 auto"
+                        },
+                        confirmButtonHoveredStyleProps: {
+                            backgroundColor: "rgb(62, 15, 132)"
+                        },
+                        cancelButtonHoveredStyleProps: {
+                            backgroundColor: "transparent",
+                            color: "rgb(62, 15, 132)",
+                            textDecoration: "underline"
+                        }
+                    }
+                }
+            };
+        }
+
+   
+
+        window.addEventListener("lcw:ready", function handleLivechatReadyEvent() {
+           // Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
+        });
+
+        window.addEventListener("lcw:error", function handleLivechatErrorEvent(errorEvent) {
+            console.error("LiveChatWidget error:", errorEvent);
+        });
+    </script>
+</body>
+</html>
